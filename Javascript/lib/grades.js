@@ -1,0 +1,26 @@
+var gradeBook = {
+
+  _grades: [], //Generally underscore is used if we want it to be truly local variable
+  addGrade: function(newGrade) {
+    this._grades.push(newGrade);
+  },
+
+  getCountOfGrades: function() {
+    return this._grades.length;
+  },
+
+  getAverage: function() {
+    var total = 0;
+    for (var i = 0; i < this._grades.length; i++) {
+      total += this._grades[i];
+    }
+    return total/this._grades.length;
+  },
+
+  reset: function() {
+    this._grades = [];
+  }
+
+};
+
+exports.book = gradeBook;
