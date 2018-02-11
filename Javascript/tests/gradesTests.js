@@ -5,6 +5,16 @@ exports["setUp"] = function(callback) {
   callback();
 };
 
+exports["Can compute letter grade of A"] = function(test) {
+  book.addGrade(100);
+  book.addGrade(90);
+
+  var result = book.getLetterGrade();
+
+  test.equal(result, 'A');
+  test.done()
+};
+
 exports["Can average grades"] = function(test){
   book.addGrade(100);
   book.addGrade(50);
@@ -12,7 +22,7 @@ exports["Can average grades"] = function(test){
   var average = book.getAverage();
   test.equal(average, 75);
   test.done();
-}
+};
 
 exports["Can add new grade"] = function(test) {
 
